@@ -4,24 +4,20 @@ namespace tddDojo
 {
     public class Poker
     {
+        private const int CorrectNumberOfCards = 5;
+
         public string PokerHand(int[] cardsInHand)
         {
-            if (!CheckIfCardsInHandAreInValidFormat(cardsInHand))
-            {
+            if (!IsCardsInHandCountIsCorrect(cardsInHand))
                 throw new ArgumentException();
-            }
-
 
             return string.Empty;
         }
 
-        private bool CheckIfCardsInHandAreInValidFormat(int[] cardsInHand)
+        private bool IsCardsInHandCountIsCorrect(int[] cardsInHand)
         {
-            int cardCount = cardsInHand.Length;
-            if (cardCount != 5)
-            {
+            if (cardsInHand.Length != CorrectNumberOfCards)
                 return false;
-            }
             else return true;
         }
     }
